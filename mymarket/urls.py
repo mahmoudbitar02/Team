@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from team.views import team_list, team_detail, create
+from team.views import team_list, team_detail, create, edit
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('team/', team_list),
     path('team/<int:id>', team_detail),
-    path('team/create', create)
+    path('team/create', create),
+    path('team/<int:id>/edit', edit)
+
 ]
 
 

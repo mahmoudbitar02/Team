@@ -26,8 +26,18 @@ def create(request):
     return render(request,'Create.html', {'form':form})  
 
 
-def edit(request):
-    pass
+def edit(request,id):
+    team = team1.objects.get(id=id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=team)
+        if form.is_valid():
+            myform = form.save(commit=False)
+            myform.author = request.user
+            myform.save()
+    else:
+        form = PostForm(instance=team)  
+
+    return render(request,'edit.html', {'form':form}) 
 
 def delete(request):
     pass
