@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import team1
 from .forms import PostForm
 
@@ -39,5 +39,7 @@ def edit(request,id):
 
     return render(request,'edit.html', {'form':form}) 
 
-def delete(request):
-    pass
+def delete(request,id):
+    team = team1.objects.get(id=id)
+    team.delete()
+    return redirect ('/team')
