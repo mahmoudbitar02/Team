@@ -1,0 +1,8 @@
+<h1>Teams</h1>
+<a href="/team/create">Create New Team</a>
+<hr>
+
+{% for item in data %}
+   <h4> <a href="/team/{{item.id}}"> {{item}}</a></h4>
+
+{%endfor%}
