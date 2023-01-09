@@ -135,7 +135,7 @@
       <div class="caption wow zoomInUp">
         <h1 class="fw-normal">Welcome</h1>
         <h2 class="fw-medium fg-theme">I'm {{about.name}}</h2>
-        <p class="tagline">UI/UX & Web Designer</p>
+        <p class="tagline">{{about.job}}</p>
       </div>
     </div>
     
@@ -146,21 +146,21 @@
         <div class="row">
           <div class="col-md-6">
             <div class="img-place wow zoomIn">
-              <img src="../assets/img/person.jpg" alt="Photo Profile">
+              <img src="{{about.image.url}}" alt="Photo Profile">
             </div>
           </div>
           <div class="col-md-6">
             <div class="caption wow fadeInRight">
-              <h2 class="fg-dark">Stephen Doe</h2>
-              <p class="fg-theme fw-medium">UI/UX & Web Designer</p>
-              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+              <h2 class="fg-dark">{{about.name|title}}</h2>
+              <p class="fg-theme fw-medium">{{about.job}}</p>
+              <p>{{about.subtitle}}</p>
               <ul class="theme-list">
-                <li class="fg-dark"><b>From:</b> Texas, US</li>
-                <li class="fg-dark"><b>Lives In:</b> Texas, US</li>
-                <li class="fg-dark"><b>Age:</b> 25</li>
-                <li class="fg-dark"><b>Gender:</b> Male</li>
+                <li class="fg-dark"><b>From:</b> {{about.from_adress}}</li>
+                <li class="fg-dark"><b>Lives In:</b> {{about.from_adress}}</li>
+                <li class="fg-dark"><b>Age:</b> {{about.age}}</li>
+                <li class="fg-dark"><b>Gender:</b> {{about.gender}}</li>
               </ul>
-              <button class="btn btn-theme btn-rounded">Download CV</button>
+              <a class="btn btn-theme btn-rounded" href='{{about.cc}}' download >Download CV</a>
             </div>
           </div>
         </div>
