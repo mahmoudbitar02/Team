@@ -18,9 +18,15 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from team.views import team_list, team_detail, create, edit, delete
+from about.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home ),
+
+
+
+
     path('team/', team_list),
     path('team/<int:id>', team_detail),
     path('team/create', create),
