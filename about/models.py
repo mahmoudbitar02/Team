@@ -18,7 +18,7 @@ class About(models.Model):
 
 SKILL_TYPE =(
     ('Coding','Coding'),
-    ('Design','Disign')
+    ('Design','Design')
 )
 
 class Skills(models.Model):
@@ -30,7 +30,7 @@ class Skills(models.Model):
         return self.skill
 
 class Education(models.Model):
-    year=models.CharField(max_length=50)
+    year=models.IntegerField()
     title=models.CharField(max_length=100)
     place=models.CharField(max_length=50)
     description = models.CharField(max_length=300)
@@ -39,7 +39,7 @@ class Education(models.Model):
         return self.title
 
 class Experience(models.Model):
-    year=models.CharField(max_length=50)
+    year=models.IntegerField()
     title=models.CharField(max_length=100)
     place=models.CharField(max_length=50)
     description = models.CharField(max_length=300)
