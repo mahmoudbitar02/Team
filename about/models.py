@@ -29,6 +29,8 @@ class Skills(models.Model):
     def __str__(self):
         return self.skill
 
+    
+
 class Education(models.Model):
     year=models.IntegerField()
     title=models.CharField(max_length=100)
@@ -38,6 +40,9 @@ class Education(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ('-year',)
+
 class Experience(models.Model):
     year=models.IntegerField()
     title=models.CharField(max_length=100)
@@ -46,6 +51,9 @@ class Experience(models.Model):
     ast=models.BooleanField(default=False)
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ('-year',)
 
 
 class Service(models.Model):
